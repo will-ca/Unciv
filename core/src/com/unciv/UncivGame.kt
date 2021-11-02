@@ -154,7 +154,8 @@ class UncivGame(parameters: UncivGameParameters) : Game() {
             ScriptingScope(
                 null,
                 null,
-                this
+                this,
+                null
             )
         )
 
