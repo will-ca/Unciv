@@ -69,7 +69,7 @@ class UncivGame(parameters: UncivGameParameters) : Game() {
     val translations = Translations()
 
     lateinit var scriptingState: ScriptingState
-    lateinit var consoleScreen: ConsoleScreen
+    lateinit var consoleScreen: ConsoleScreen // Keep same ConsoleScreen() when possible, to avoid having to manually persist/restore history, input field, etc.
 
     override fun create() {
         Gdx.input.setCatchKey(Input.Keys.BACK, true)
@@ -176,6 +176,12 @@ class UncivGame(parameters: UncivGameParameters) : Game() {
         setScreen(worldScreen)
         worldScreen.shouldUpdate = true // This can set the screen to the policy picker or tech picker screen, so the input processor must come before
         Gdx.graphics.requestRendering()
+    }
+
+    fun setConsoleScreen() {
+        if (settings.enableScriptingConsole) {
+            consoleScreen.openConsole()
+        }
     }
 
     // This is ALWAYS called after create() on Android - google "Android life cycle"
