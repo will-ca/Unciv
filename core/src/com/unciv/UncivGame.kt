@@ -71,7 +71,6 @@ class UncivGame(parameters: UncivGameParameters) : Game() {
 
     val translations = Translations()
 
-    lateinit var scriptingState: ScriptingState
     lateinit var consoleScreen: ConsoleScreen
     // Keep same ConsoleScreen() when possible, to avoid having to manually persist/restore history, input field, etc.
 
@@ -154,15 +153,9 @@ class UncivGame(parameters: UncivGameParameters) : Game() {
     }
 
     private fun createScripting() {
-        scriptingState = ScriptingState(
-            ScriptingScope(
-                uncivGame = this
-            )
-        )
-        consoleScreen = ConsoleScreen(
-            scriptingState,
-            {  }
-        )
+        ScriptingScope.uncivGame = this
+
+        consoleScreen = ConsoleScreen {  }
     }
 
     fun setScreen(screen: BaseScreen) {
