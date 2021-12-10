@@ -202,7 +202,7 @@ class Translations : LinkedHashMap<String, TranslationEntry>(){
      */
     fun getSpaceEquivalent(language: String): String {
         val translation = getText("\" \"", language, null)
-        return translation.substring(1, translation.length-1)
+        return translation.substring(1, translation.lastIndex)
     }
     
     fun shouldCapitalize(language: String): Boolean {
@@ -289,7 +289,7 @@ fun String.tr(): String {
         // translated conditionals, removing the <> surrounding them, and removing param values
         // where it exists.
         val conditionalOrdering = UncivGame.Current.translations.getConditionalOrder(language)
-        for (placedConditional in pointyBraceRegex.findAll(conditionalOrdering).map { it.value.substring(1, it.value.length-1).getPlaceholderText() }) {
+        for (placedConditional in pointyBraceRegex.findAll(conditionalOrdering).map { it.value.substring(1, it.value.lastIndex).getPlaceholderText() }) {
             if (placedConditional in conditionals) {
                 translatedConditionals.add(conditionsWithTranslation[placedConditional]!!)
                 conditionsWithTranslation.remove(placedConditional)
