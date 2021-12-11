@@ -20,6 +20,11 @@ Example: "[+1 Gold, +2 Production]"
 
 Applicable to: Improvement, Global, FollowerBelief
 
+#### Consumes [amount] [resource]
+Example: "Consumes [20] [Iron]"
+
+Applicable to: Improvement, Unit, Building
+
 #### Provides [amount] [resource]
 Example: "Provides [20] [Iron]"
 
@@ -280,6 +285,29 @@ Applicable to: Global
 #### Triggers a Cultural Victory upon completion
 Applicable to: Global
 
+#### [amount]% Strength
+Example: "[20]% Strength"
+
+Applicable to: Global, Unit
+
+#### [amount] Movement
+Example: "[20] Movement"
+
+Applicable to: Global, Unit
+
+#### [amount] Sight
+Example: "[20] Sight"
+
+Applicable to: Global, Unit, Terrain
+
+#### [amount]% Spread Religion Strength
+Example: "[20]% Spread Religion Strength"
+
+Applicable to: Global, Unit
+
+#### Normal vision when embarked
+Applicable to: Global, Unit
+
 #### Free [baseUnitFilter] appears
 Example: "Free [Melee] appears"
 
@@ -494,11 +522,6 @@ Example: "Retain [20]% of the happiness from a luxury after the last copy has be
 Applicable to: Nation
 
 ## Unit uniques
-#### Consumes [amount] [resource]
-Example: "Consumes [20] [Iron]"
-
-Applicable to: Unit, Improvement, Building
-
 #### Unbuildable
 Applicable to: Unit, Building
 
@@ -546,39 +569,16 @@ Example: "Can see invisible [Wounded] units"
 
 Applicable to: Unit
 
-#### [amount]% Strength
-Example: "[20]% Strength"
-
-Applicable to: Unit, Global
-
 #### [amount]% Strength decreasing with distance from the capital
 Example: "[20]% Strength decreasing with distance from the capital"
 
 Applicable to: Unit
-
-#### [amount] Movement
-Example: "[20] Movement"
-
-Applicable to: Unit, Global
-
-#### [amount] Sight
-Example: "[20] Sight"
-
-Applicable to: Unit, Global, Terrain
-
-#### [amount]% Spread Religion Strength
-Example: "[20]% Spread Religion Strength"
-
-Applicable to: Unit, Global
 
 #### May found a religion
 Applicable to: Unit
 
 #### May enhance a religion
 Applicable to: Unit
-
-#### Normal vision when embarked
-Applicable to: Unit, Global
 
 #### Cannot attack
 Applicable to: Unit
