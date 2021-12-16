@@ -1,0 +1,888 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>TileMap</title>
+</head><body><link href="../../../images/logo-icon.svg" rel="icon" type="image/svg"><script>var pathToRoot = "../../../";</script><script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async></script><link href="../../../styles/style.css" rel="Stylesheet"><link href="../../../styles/logo-styles.css" rel="Stylesheet"><link href="../../../styles/jetbrains-mono.css" rel="Stylesheet"><link href="../../../styles/main.css" rel="Stylesheet"><script type="text/javascript" src="../../../scripts/clipboard.js" async></script><script type="text/javascript" src="../../../scripts/navigation-loader.js" async></script><script type="text/javascript" src="../../../scripts/platform-content-handler.js" async></script><script type="text/javascript" src="../../../scripts/main.js" async></script>
+  
+    <div id="container">
+      <div id="leftColumn"><a href="../../../index.html">
+            <div id="logo"></div>
+          </a>
+        <div id="paneSearch"></div>
+        <div id="sideMenu"></div>
+      </div>
+      <div id="main">
+        <script type="text/javascript" src="../../../scripts/main.js"></script><div id="leftToggler"><span class="icon-toggler"></span></div>
+
+        <div class="main-content" id="content" pageids="core::com.unciv.logic.map/TileMap///PointingToDeclaration//537371977">
+          <div class="navigation-wrapper" id="navigation-wrapper">
+            <div class="breadcrumbs"><a href="../../index.html">core</a>/<a href="../index.html">com.unciv.logic.map</a>/<a href="index.html">TileMap</a></div>
+            <div class="pull-right d-flex">
+              <div id="searchBar"></div>
+            </div>
+          </div>
+          <div class="cover ">
+            <h1 class="cover"><span>Tile</span><wbr><span><span>Map</span></span></h1>
+            <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">class <a href="index.html">TileMap</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">An Unciv map with all properties as produced by the <a href="../../com.unciv.ui.mapeditor/-map-editor-screen/index.html">map editor</a> or <a href="../../com.unciv.logic.map.mapgenerator/-map-generator/index.html">MapGenerator</a>; or as part of a running <a href="../../com.unciv.logic/-game-info/index.html">game</a>.</p><p class="paragraph">Note: Will be Serialized -&gt; Take special care with lateinit and lazy!</p></div></div>
+          </div>
+          <div class="tabbedcontent">
+            <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="Types">Types</button><button class="section-tab" data-togglable="Constructors">Constructors</button><button class="section-tab" data-togglable="Functions">Functions</button><button class="section-tab" data-togglable="Properties">Properties</button><button class="section-tab" data-togglable="Sources">Sources</button></div>
+            <div class="tabs-section-body">
+              <h2 class="tabbedcontent">Constructors</h2>
+              <div class="table" data-togglable="Constructors"><a data-name="1504716151%2FConstructors%2F537371977" anchor-label="TileMap" id="1504716151%2FConstructors%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue TabbedContent">
+                    <div class=""><span class="inline-flex"><a href="-tile-map.html">TileMap</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1504716151%2FConstructors%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="-tile-map.html">TileMap</a>()<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">for json parsing, we need to have a default constructor</p></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-161687368%2FConstructors%2F537371977" anchor-label="TileMap" id="-161687368%2FConstructors%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue TabbedContent">
+                    <div class=""><span class="inline-flex"><a href="-tile-map.html">TileMap</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-161687368%2FConstructors%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="-tile-map.html">TileMap</a>(radius: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, ruleset: <a href="../../com.unciv.models.ruleset/-ruleset/index.html">Ruleset</a>, worldWrap: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">creates a hexagonal map of given radius (filled with grassland)</p></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="850862155%2FConstructors%2F537371977" anchor-label="TileMap" id="850862155%2FConstructors%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue TabbedContent">
+                    <div class=""><span class="inline-flex"><a href="-tile-map.html">TileMap</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="850862155%2FConstructors%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="-tile-map.html">TileMap</a>(width: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, height: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, ruleset: <a href="../../com.unciv.models.ruleset/-ruleset/index.html">Ruleset</a>, worldWrap: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><p class="paragraph">creates a rectangular map of given width and height (filled with grassland)</p></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="">Types</h2>
+              <div class="table" data-togglable="Types"><a data-name="1857751705%2FClasslikes%2F537371977" anchor-label="AssignContinentsMode" id="1857751705%2FClasslikes%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="-assign-continents-mode/index.html"><span>Assign</span><wbr><span>Continents</span><wbr><span><span>Mode</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1857751705%2FClasslikes%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">enum <a href="-assign-continents-mode/index.html">AssignContinentsMode</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a>&lt;<a href="-assign-continents-mode/index.html">TileMap.AssignContinentsMode</a>&gt; <span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Behaviour of <a href="assign-continents.html">assignContinents</a></p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1219454804%2FClasslikes%2F537371977" anchor-label="Companion" id="-1219454804%2FClasslikes%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="-companion/index.html"><span><span>Companion</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1219454804%2FClasslikes%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">object <a href="-companion/index.html">Companion</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-748855851%2FClasslikes%2F537371977" anchor-label="StartingLocation" id="-748855851%2FClasslikes%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="-starting-location/index.html"><span>Starting</span><wbr><span><span>Location</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-748855851%2FClasslikes%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">private data class <a href="-starting-location/index.html">StartingLocation</a>(position: <a href="https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/math/Vector2.html">Vector2</a>, nation: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Structure geared for simple serialization by Gdx.Json (which is a little blind to kotlin collections, especially HashSet)</p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="">Functions</h2>
+              <div class="table" data-togglable="Functions"><a data-name="-1393892280%2FFunctions%2F537371977" anchor-label="addStartingLocation" id="-1393892280%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="add-starting-location.html"><span>add</span><wbr><span>Starting</span><wbr><span><span>Location</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1393892280%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="add-starting-location.html">addStartingLocation</a>(nationName: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, tile: <a href="../-tile-info/index.html">TileInfo</a>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Adds a starting position, maintaining the transients</p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1504880816%2FFunctions%2F537371977" anchor-label="assignContinents" id="-1504880816%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="assign-continents.html"><span>assign</span><wbr><span><span>Continents</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1504880816%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="assign-continents.html">assignContinents</a>(mode: <a href="-assign-continents-mode/index.html">TileMap.AssignContinentsMode</a>)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Set a continent id for each tile, so we can quickly see which tiles are connected. Can also be called on saved maps.</p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="1225190916%2FFunctions%2F537371977" anchor-label="clearStartingLocations" id="1225190916%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="clear-starting-locations.html"><span>clear</span><wbr><span>Starting</span><wbr><span><span>Locations</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1225190916%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="clear-starting-locations.html">clearStartingLocations</a>()<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Clears starting positions, e.g. after GameStarter is done with them. Does not clear the pseudo-improvements.</p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="1832374440%2FFunctions%2F537371977" anchor-label="clone" id="1832374440%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="clone.html"><span><span>clone</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1832374440%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="clone.html">clone</a>(): <a href="index.html">TileMap</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="737026693%2FFunctions%2F537371977" anchor-label="contains" id="737026693%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="contains.html"><span><span>contains</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="737026693%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">operator fun <a href="contains.html">contains</a>(vector: <a href="https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/math/Vector2.html">Vector2</a>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace">fun <a href="contains.html">contains</a>(x: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, y: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="585090901%2FFunctions%2F537371977" anchor-label="equals" id="585090901%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../../com.unciv.ui.worldscreen.unit/-unit-table/index.html#585090901%2FFunctions%2F537371977"><span><span>equals</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="585090901%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">open operator fun <a href="../../com.unciv.ui.worldscreen.unit/-unit-table/index.html#585090901%2FFunctions%2F537371977">equals</a>(other: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a>?): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-263841299%2FFunctions%2F537371977" anchor-label="get" id="-263841299%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="get.html"><span><span>get</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-263841299%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">operator fun <a href="get.html">get</a>(vector: <a href="https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/math/Vector2.html">Vector2</a>): <a href="../-tile-info/index.html">TileInfo</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="symbol monospace">operator fun <a href="get.html">get</a>(x: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, y: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>): <a href="../-tile-info/index.html">TileInfo</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1910985557%2FFunctions%2F537371977" anchor-label="getClockPositionNeighborTile" id="-1910985557%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="get-clock-position-neighbor-tile.html"><span>get</span><wbr><span>Clock</span><wbr><span>Position</span><wbr><span>Neighbor</span><wbr><span><span>Tile</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1910985557%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="get-clock-position-neighbor-tile.html">getClockPositionNeighborTile</a>(tile: <a href="../-tile-info/index.html">TileInfo</a>, clockPosition: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>): <a href="../-tile-info/index.html">TileInfo</a>?<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Returns the neighbor tile of <a href="get-clock-position-neighbor-tile.html">tile</a> at <a href="get-clock-position-neighbor-tile.html">clockPosition</a>, if it exists. Takes world wrap into account Returns null if there is no such neighbor tile or if <a href="get-clock-position-neighbor-tile.html">clockPosition</a> is not a valid clock position</p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1031214335%2FFunctions%2F537371977" anchor-label="getIfTileExistsOrNull" id="-1031214335%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="get-if-tile-exists-or-null.html"><span>get</span><wbr><span>If</span><wbr><span>Tile</span><wbr><span>Exists</span><wbr><span>Or</span><wbr><span><span>Null</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1031214335%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="get-if-tile-exists-or-null.html">getIfTileExistsOrNull</a>(x: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, y: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>): <a href="../-tile-info/index.html">TileInfo</a>?<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1355679029%2FFunctions%2F537371977" anchor-label="getNeighborTileClockPosition" id="-1355679029%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="get-neighbor-tile-clock-position.html"><span>get</span><wbr><span>Neighbor</span><wbr><span>Tile</span><wbr><span>Clock</span><wbr><span><span>Position</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1355679029%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="get-neighbor-tile-clock-position.html">getNeighborTileClockPosition</a>(tile: <a href="../-tile-info/index.html">TileInfo</a>, otherTile: <a href="../-tile-info/index.html">TileInfo</a>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Returns the clock position of <a href="get-neighbor-tile-clock-position.html">otherTile</a> seen from <a href="get-neighbor-tile-clock-position.html">tile</a>'s position Returns -1 if not neighbors</p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-88040951%2FFunctions%2F537371977" anchor-label="getNeighborTilePositionAsWorldCoords" id="-88040951%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="get-neighbor-tile-position-as-world-coords.html"><span>get</span><wbr><span>Neighbor</span><wbr><span>Tile</span><wbr><span>Position</span><wbr><span>As</span><wbr><span>World</span><wbr><span><span>Coords</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-88040951%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="get-neighbor-tile-position-as-world-coords.html">getNeighborTilePositionAsWorldCoords</a>(tile: <a href="../-tile-info/index.html">TileInfo</a>, otherTile: <a href="../-tile-info/index.html">TileInfo</a>): <a href="https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/math/Vector2.html">Vector2</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Convert relative direction of <a href="get-neighbor-tile-position-as-world-coords.html">otherTile</a> seen from <a href="get-neighbor-tile-position-as-world-coords.html">tile</a>'s position into a vector in world coordinates of length sqrt(3), so that it can be used to go from tile center to the edge of the hex in that direction (meaning the center of the border between the hexes)</p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1577496646%2FFunctions%2F537371977" anchor-label="getOrNull" id="-1577496646%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="get-or-null.html"><span>get</span><wbr><span>Or</span><wbr><span><span>Null</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1577496646%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">private fun <a href="get-or-null.html">getOrNull</a>(x: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, y: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>): <a href="../-tile-info/index.html">TileInfo</a>?<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="430050220%2FFunctions%2F537371977" anchor-label="getRulesetIncompatibility" id="430050220%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="get-ruleset-incompatibility.html"><span>get</span><wbr><span>Ruleset</span><wbr><span><span>Incompatibility</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="430050220%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="get-ruleset-incompatibility.html">getRulesetIncompatibility</a>(ruleset: <a href="../../com.unciv.models.ruleset/-ruleset/index.html">Ruleset</a>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-hash-set/index.html">HashSet</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Build a list of incompatibilities of a map with a ruleset for the new game loader</p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="1686436317%2FFunctions%2F537371977" anchor-label="getTilesAtDistance" id="1686436317%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="get-tiles-at-distance.html"><span>get</span><wbr><span>Tiles</span><wbr><span>At</span><wbr><span><span>Distance</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1686436317%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="get-tiles-at-distance.html">getTilesAtDistance</a>(origin: <a href="https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/math/Vector2.html">Vector2</a>, distance: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html">Sequence</a>&lt;<a href="../-tile-info/index.html">TileInfo</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="1666218283%2FFunctions%2F537371977" anchor-label="getTilesInDistance" id="1666218283%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="get-tiles-in-distance.html"><span>get</span><wbr><span>Tiles</span><wbr><span>In</span><wbr><span><span>Distance</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1666218283%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="get-tiles-in-distance.html">getTilesInDistance</a>(origin: <a href="https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/math/Vector2.html">Vector2</a>, distance: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html">Sequence</a>&lt;<a href="../-tile-info/index.html">TileInfo</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="113958169%2FFunctions%2F537371977" anchor-label="getTilesInDistanceRange" id="113958169%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="get-tiles-in-distance-range.html"><span>get</span><wbr><span>Tiles</span><wbr><span>In</span><wbr><span>Distance</span><wbr><span><span>Range</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="113958169%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="get-tiles-in-distance-range.html">getTilesInDistanceRange</a>(origin: <a href="https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/math/Vector2.html">Vector2</a>, range: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.ranges/-int-range/index.html">IntRange</a>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html">Sequence</a>&lt;<a href="../-tile-info/index.html">TileInfo</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-368839312%2FFunctions%2F537371977" anchor-label="getTilesInRectangle" id="-368839312%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="get-tiles-in-rectangle.html"><span>get</span><wbr><span>Tiles</span><wbr><span>In</span><wbr><span><span>Rectangle</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-368839312%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="get-tiles-in-rectangle.html">getTilesInRectangle</a>(rectangle: <a href="https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/math/Rectangle.html">Rectangle</a>, evenQ: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = false): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html">Sequence</a>&lt;<a href="../-tile-info/index.html">TileInfo</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="1606898504%2FFunctions%2F537371977" anchor-label="getUnWrappedPosition" id="1606898504%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="get-un-wrapped-position.html"><span>get</span><wbr><span>Un</span><wbr><span>Wrapped</span><wbr><span><span>Position</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1606898504%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="get-un-wrapped-position.html">getUnWrappedPosition</a>(position: <a href="https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/math/Vector2.html">Vector2</a>): <a href="https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/math/Vector2.html">Vector2</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Returns the closest position to (0, 0) outside the map which can be wrapped to the position of the given vector</p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="1046041060%2FFunctions%2F537371977" anchor-label="getViewableTiles" id="1046041060%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="get-viewable-tiles.html"><span>get</span><wbr><span>Viewable</span><wbr><span><span>Tiles</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1046041060%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="get-viewable-tiles.html">getViewableTiles</a>(position: <a href="https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/math/Vector2.html">Vector2</a>, sightDistance: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a>&lt;<a href="../-tile-info/index.html">TileInfo</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="1794629105%2FFunctions%2F537371977" anchor-label="hashCode" id="1794629105%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../../com.unciv.ui.worldscreen.unit/-unit-table/index.html#1794629105%2FFunctions%2F537371977"><span>hash</span><wbr><span><span>Code</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1794629105%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">open fun <a href="../../com.unciv.ui.worldscreen.unit/-unit-table/index.html#1794629105%2FFunctions%2F537371977">hashCode</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="1342042086%2FFunctions%2F537371977" anchor-label="isWaterMap" id="1342042086%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="is-water-map.html"><span>is</span><wbr><span>Water</span><wbr><span><span>Map</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1342042086%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="is-water-map.html">isWaterMap</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-105849894%2FFunctions%2F537371977" anchor-label="placeUnitNearTile" id="-105849894%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="place-unit-near-tile.html"><span>place</span><wbr><span>Unit</span><wbr><span>Near</span><wbr><span><span>Tile</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-105849894%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="place-unit-near-tile.html">placeUnitNearTile</a>(position: <a href="https://libgdx.badlogicgames.com/ci/nightlies/docs/api/com/badlogic/gdx/math/Vector2.html">Vector2</a>, unitName: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, civInfo: <a href="../../com.unciv.logic.civilization/-civilization-info/index.html">CivilizationInfo</a>): <a href="../-map-unit/index.html">MapUnit</a>?<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Tries to place the <a href="place-unit-near-tile.html">unitName</a> into the <a href="../-tile-info/index.html">TileInfo</a> closest to the given <a href="place-unit-near-tile.html">position</a></p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1843200912%2FFunctions%2F537371977" anchor-label="removeMissingTerrainModReferences" id="-1843200912%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="remove-missing-terrain-mod-references.html"><span>remove</span><wbr><span>Missing</span><wbr><span>Terrain</span><wbr><span>Mod</span><wbr><span><span>References</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1843200912%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="remove-missing-terrain-mod-references.html">removeMissingTerrainModReferences</a>(ruleSet: <a href="../../com.unciv.models.ruleset/-ruleset/index.html">Ruleset</a>)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1711443147%2FFunctions%2F537371977" anchor-label="removeStartingLocation" id="-1711443147%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="remove-starting-location.html"><span>remove</span><wbr><span>Starting</span><wbr><span><span>Location</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1711443147%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="remove-starting-location.html">removeStartingLocation</a>(nationName: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, tile: <a href="../-tile-info/index.html">TileInfo</a>): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Removes a starting position, maintaining the transients</p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1564686567%2FFunctions%2F537371977" anchor-label="removeStartingLocations" id="-1564686567%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="remove-starting-locations.html"><span>remove</span><wbr><span>Starting</span><wbr><span><span>Locations</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1564686567%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="remove-starting-locations.html">removeStartingLocations</a>(nationName: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Removes all starting positions for <a href="remove-starting-locations.html">nationName</a>, maintaining the transients</p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-280881744%2FFunctions%2F537371977" anchor-label="setStartingLocationsTransients" id="-280881744%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="set-starting-locations-transients.html"><span>set</span><wbr><span>Starting</span><wbr><span>Locations</span><wbr><span><span>Transients</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-280881744%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="set-starting-locations-transients.html">setStartingLocationsTransients</a>()<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Initialize startingLocations transients, including legacy support (maps saved with placeholder improvements)</p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-483310243%2FFunctions%2F537371977" anchor-label="setTransients" id="-483310243%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="set-transients.html"><span>set</span><wbr><span><span>Transients</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-483310243%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="set-transients.html">setTransients</a>(ruleset: <a href="../../com.unciv.models.ruleset/-ruleset/index.html">Ruleset</a>? = null, setUnitCivTransients: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a> = true)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Initialize transients - without, most operations, like <a href="get.html">get</a> from coordinates, will fail.</p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="1602010271%2FFunctions%2F537371977" anchor-label="stripAllUnits" id="1602010271%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="strip-all-units.html"><span>strip</span><wbr><span>All</span><wbr><span><span>Units</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1602010271%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="strip-all-units.html">stripAllUnits</a>(): <a href="index.html">TileMap</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Strips all units from <a href="index.html">TileMap</a></p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1622325556%2FFunctions%2F537371977" anchor-label="stripPlayer" id="-1622325556%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="strip-player.html"><span>strip</span><wbr><span><span>Player</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1622325556%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="strip-player.html">stripPlayer</a>(player: <a href="../../com.unciv.models.metadata/-player/index.html">Player</a>)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Strips all units and starting locations from <a href="index.html">TileMap</a> for specified <a href="../../com.unciv.models.metadata/-player/index.html">Player</a> Operation in place</p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="1544671796%2FFunctions%2F537371977" anchor-label="switchPlayersNation" id="1544671796%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="switch-players-nation.html"><span>switch</span><wbr><span>Players</span><wbr><span><span>Nation</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1544671796%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">fun <a href="switch-players-nation.html">switchPlayersNation</a>(player: <a href="../../com.unciv.models.metadata/-player/index.html">Player</a>, newNation: <a href="../../com.unciv.models.ruleset/-nation/index.html">Nation</a>)<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Finds all units and starting location of <a href="../../com.unciv.models.metadata/-player/index.html">Player</a> and changes their <a href="../../com.unciv.models.ruleset/-nation/index.html">Nation</a> Operation in place</p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="1616463040%2FFunctions%2F537371977" anchor-label="toString" id="1616463040%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="../../com.unciv.ui.worldscreen.unit/-unit-actions/index.html#1616463040%2FFunctions%2F537371977"><span>to</span><wbr><span><span>String</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1616463040%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">open fun <a href="../../com.unciv.ui.worldscreen.unit/-unit-actions/index.html#1616463040%2FFunctions%2F537371977">toString</a>(): <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+</div>
+</div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-400782909%2FFunctions%2F537371977" anchor-label="translateStartingLocationsFromMap" id="-400782909%2FFunctions%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="translate-starting-locations-from-map.html"><span>translate</span><wbr><span>Starting</span><wbr><span>Locations</span><wbr><span>From</span><wbr><span><span>Map</span></span></a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-400782909%2FFunctions%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title"><div class="divergent-group" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main"><div class="with-platform-tags"><span class="pull-right"></span></div>
+
+  <div>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><div class="symbol monospace">private fun <a href="translate-starting-locations-from-map.html">translateStartingLocationsFromMap</a>()<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+  </div>
+<div class="brief "><p class="paragraph">Scan and remove placeholder improvements from map and build startingLocations from them</p></div></div>
+</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="">Properties</h2>
+              <div class="table" data-togglable="Properties"><a data-name="1004888471%2FProperties%2F537371977" anchor-label="bottomY" id="1004888471%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="bottom-y.html">bottomY</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1004888471%2FProperties%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><a data-name="1004888471%2FProperties%2F537371977" anchor-label="bottomY" id="1004888471%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><div class="symbol monospace"><div class="block"><div class="block">@<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-transient/index.html">Transient</a></div></div>var <a href="bottom-y.html">bottomY</a>: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 0<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1384802409%2FProperties%2F537371977" anchor-label="continentSizes" id="-1384802409%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="continent-sizes.html">continentSizes</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1384802409%2FProperties%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><a data-name="-1384802409%2FProperties%2F537371977" anchor-label="continentSizes" id="-1384802409%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><div class="symbol monospace"><div class="block"><div class="block">@<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-transient/index.html">Transient</a></div></div>val <a href="continent-sizes.html">continentSizes</a>: <a href="https://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html">HashMap</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>, <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1259911339%2FProperties%2F537371977" anchor-label="gameInfo" id="-1259911339%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="game-info.html">gameInfo</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1259911339%2FProperties%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><a data-name="-1259911339%2FProperties%2F537371977" anchor-label="gameInfo" id="-1259911339%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><div class="symbol monospace"><div class="block"><div class="block">@<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-transient/index.html">Transient</a></div></div>lateinit var <a href="game-info.html">gameInfo</a>: <a href="../../com.unciv.logic/-game-info/index.html">GameInfo</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-1259911339%2FProperties%2F537371977" anchor-label="gameInfo" id="-1259911339%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><p class="paragraph">Attention: lateinit will <i>stay uninitialized</i> while in MapEditorScreen!</p></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="446595924%2FProperties%2F537371977" anchor-label="leftX" id="446595924%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="left-x.html">leftX</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="446595924%2FProperties%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><a data-name="446595924%2FProperties%2F537371977" anchor-label="leftX" id="446595924%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><div class="symbol monospace"><div class="block"><div class="block">@<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-transient/index.html">Transient</a></div></div>var <a href="left-x.html">leftX</a>: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a> = 0<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="930582975%2FProperties%2F537371977" anchor-label="mapParameters" id="930582975%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="map-parameters.html">mapParameters</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="930582975%2FProperties%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><a data-name="930582975%2FProperties%2F537371977" anchor-label="mapParameters" id="930582975%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><div class="symbol monospace">var <a href="map-parameters.html">mapParameters</a>: <a href="../-map-parameters/index.html">MapParameters</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1693550219%2FProperties%2F537371977" anchor-label="maxLatitude" id="-1693550219%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="max-latitude.html">maxLatitude</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1693550219%2FProperties%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><a data-name="-1693550219%2FProperties%2F537371977" anchor-label="maxLatitude" id="-1693550219%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><div class="symbol monospace">val <a href="max-latitude.html">maxLatitude</a>: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="619163850%2FProperties%2F537371977" anchor-label="maxLongitude" id="619163850%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="max-longitude.html">maxLongitude</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="619163850%2FProperties%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><a data-name="619163850%2FProperties%2F537371977" anchor-label="maxLongitude" id="619163850%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><div class="symbol monospace">val <a href="max-longitude.html">maxLongitude</a>: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html">Float</a><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1563493306%2FProperties%2F537371977" anchor-label="naturalWonders" id="-1563493306%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="natural-wonders.html">naturalWonders</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1563493306%2FProperties%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><a data-name="-1563493306%2FProperties%2F537371977" anchor-label="naturalWonders" id="-1563493306%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><div class="symbol monospace">val <a href="natural-wonders.html">naturalWonders</a>: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1834890016%2FProperties%2F537371977" anchor-label="resources" id="-1834890016%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="resources.html">resources</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1834890016%2FProperties%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><a data-name="-1834890016%2FProperties%2F537371977" anchor-label="resources" id="-1834890016%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><div class="symbol monospace">val <a href="resources.html">resources</a>: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-168711105%2FProperties%2F537371977" anchor-label="ruleset" id="-168711105%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="ruleset.html">ruleset</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-168711105%2FProperties%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><a data-name="-168711105%2FProperties%2F537371977" anchor-label="ruleset" id="-168711105%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><div class="symbol monospace"><div class="block"><div class="block">@<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-transient/index.html">Transient</a></div></div>var <a href="ruleset.html">ruleset</a>: <a href="../../com.unciv.models.ruleset/-ruleset/index.html">Ruleset</a>? = null<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><div class="brief "><a data-name="-168711105%2FProperties%2F537371977" anchor-label="ruleset" id="-168711105%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><p class="paragraph">Keep a copy of the <a href="../../com.unciv.models.ruleset/-ruleset/index.html">Ruleset</a> object passed to setTransients, for now only to allow subsequent setTransients without. Copied on <a href="clone.html">clone</a>.</p></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1790051801%2FProperties%2F537371977" anchor-label="startingLocations" id="-1790051801%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="starting-locations.html">startingLocations</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1790051801%2FProperties%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><a data-name="-1790051801%2FProperties%2F537371977" anchor-label="startingLocations" id="-1790051801%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><div class="symbol monospace">private val <a href="starting-locations.html">startingLocations</a>: <a href="https://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">ArrayList</a>&lt;<a href="-starting-location/index.html">TileMap.StartingLocation</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1255395511%2FProperties%2F537371977" anchor-label="startingLocationsByNation" id="-1255395511%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="starting-locations-by-nation.html">startingLocationsByNation</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1255395511%2FProperties%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><a data-name="-1255395511%2FProperties%2F537371977" anchor-label="startingLocationsByNation" id="-1255395511%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><div class="symbol monospace"><div class="block"><div class="block">@<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-transient/index.html">Transient</a></div></div>val <a href="starting-locations-by-nation.html">startingLocationsByNation</a>: <a href="https://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html">HashMap</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a>, <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-hash-set/index.html">HashSet</a>&lt;<a href="../-tile-info/index.html">TileInfo</a>&gt;&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-5501911%2FProperties%2F537371977" anchor-label="tileList" id="-5501911%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="tile-list.html">tileList</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-5501911%2FProperties%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><a data-name="-5501911%2FProperties%2F537371977" anchor-label="tileList" id="-5501911%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><div class="symbol monospace">private var <a href="tile-list.html">tileList</a>: <a href="https://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">ArrayList</a>&lt;<a href="../-tile-info/index.html">TileInfo</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="-1820084250%2FProperties%2F537371977" anchor-label="tileMatrix" id="-1820084250%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="tile-matrix.html">tileMatrix</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1820084250%2FProperties%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><a data-name="-1820084250%2FProperties%2F537371977" anchor-label="tileMatrix" id="-1820084250%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><div class="symbol monospace"><div class="block"><div class="block">@<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-transient/index.html">Transient</a></div></div>var <a href="tile-matrix.html">tileMatrix</a>: <a href="https://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">ArrayList</a>&lt;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-array-list/index.html">ArrayList</a>&lt;<a href="../-tile-info/index.html">TileInfo</a>?&gt;&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<a data-name="918580787%2FProperties%2F537371977" anchor-label="values" id="918580787%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="values.html">values</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="918580787%2FProperties%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div>
+                      <div class="title">
+                        <div class="platform-hinted " data-platform-hinted="data-platform-hinted" data-togglable="Properties"><div class="content sourceset-depenent-content" data-active="" data-togglable=":core:dokkaHtmlPartial/main"><a data-name="918580787%2FProperties%2F537371977" anchor-label="values" id="918580787%2FProperties%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a><div class="symbol monospace">val <a href="values.html">values</a>: <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html">Collection</a>&lt;<a href="../-tile-info/index.html">TileInfo</a>&gt;<span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <h2 class="">Sources</h2>
+              <div class="table" data-togglable="Sources"><a data-name="-108443478%2FSource%2F537371977" anchor-label="https://github.com/yairm210/Unciv/tree/master/core/src/com/unciv/logic/map/TileMap.kt#L15" id="-108443478%2FSource%2F537371977" data-filterable-set=":core:dokkaHtmlPartial/main"></a>
+                <div class="table-row" data-filterable-current=":core:dokkaHtmlPartial/main" data-filterable-set=":core:dokkaHtmlPartial/main">
+                  <div class="main-subrow keyValue ">
+                    <div class=""><span class="inline-flex"><a href="https://github.com/yairm210/Unciv/tree/master/core/src/com/unciv/logic/map/TileMap.kt#L15">jvm source</a><span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-108443478%2FSource%2F537371977"></span>
+                          <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                        </span></span></div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer"><span class="go-to-top-icon"><a href="#content"></a></span><span>© 2021 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span></div>
+      </div>
+    </div>
+  
+</body></html>
+
+
