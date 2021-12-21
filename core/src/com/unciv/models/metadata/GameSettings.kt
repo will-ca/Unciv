@@ -4,13 +4,20 @@ import com.badlogic.gdx.Application
 import com.badlogic.gdx.Gdx
 import com.unciv.UncivGame
 import com.unciv.logic.GameSaver
+import com.unciv.scripting.ScriptingBackendType
 import java.text.Collator
 import java.util.*
 import kotlin.collections.HashSet
+import kotlin.collections.LinkedHashMap
 
 data class WindowState (val width: Int = 900, val height: Int = 600)
 
 class GameSettings {
+
+    companion object {
+        val scriptingConsoleStartupDefaults = ScriptingBackendType.values().associate { it.metadata.displayName to it.suggestedStartup }
+    }
+
     var showWorkedTiles: Boolean = false
     var showResourcesAndImprovements: Boolean = true
     var showTileYields: Boolean = false
@@ -50,6 +57,12 @@ class GameSettings {
     var visualMods = HashSet<String>()
 
     var showExperimentalWorldWrap = false // We're keeping this as a config due to ANR problems on Android phones for people who don't know what they're doing :/
+
+    var enableScriptingConsole = false
+    var showScriptingConsoleWarning = true
+    var scriptingConsoleStartups = scriptingConsoleStartupDefaults.toMutableMap()
+
+    var enableModScripting = false
 
     var lastOverviewPage: String = "Cities"
 
@@ -142,3 +155,4 @@ enum class LocaleCode(var language: String, var country: String) {
     Ukrainian("uk", "UA"),
     Vietnamese("vi", "VN"),
 }
+

@@ -13,6 +13,10 @@ import com.unciv.models.metadata.GameSettings
 import com.unciv.models.ruleset.RulesetCache
 import com.unciv.models.tilesets.TileSetCache
 import com.unciv.models.translations.Translations
+import com.unciv.scripting.ScriptingState
+import com.unciv.scripting.api.ScriptingScope
+import com.unciv.scripting.utils.ScriptingDebugParameters
+import com.unciv.ui.consolescreen.ConsoleScreen
 import com.unciv.ui.LanguagePickerScreen
 import com.unciv.ui.audio.MusicController
 import com.unciv.ui.audio.MusicMood
@@ -33,6 +37,8 @@ class UncivGame(parameters: UncivGameParameters) : Game() {
     val consoleMode = parameters.consoleMode
     val customSaveLocationHelper = parameters.customSaveLocationHelper
     val limitOrientationsHelper = parameters.limitOrientationsHelper
+    val runScriptAndExit = parameters.runScriptAndExit
+
 
     lateinit var gameInfo: GameInfo
     fun isGameInfoInitialized() = this::gameInfo.isInitialized
@@ -48,11 +54,13 @@ class UncivGame(parameters: UncivGameParameters) : Game() {
     /** For when you need to test something in an advanced game and don't have time to faff around */
     var superchargedForDebug = false
 
+    val scriptingParametersForDebug = ScriptingDebugParameters
+
     /** Simulate until this turn on the first "Next turn" button press.
      *  Does not update World View changes until finished.
      *  Set to 0 to disable.
      */
-    val simulateUntilTurnForDebug: Int = 0
+    var simulateUntilTurnForDebug: Int = 0
 
     /** Console log battles
      */
@@ -65,7 +73,14 @@ class UncivGame(parameters: UncivGameParameters) : Game() {
 
     val translations = Translations()
 
+    lateinit var consoleScreen: ConsoleScreen
+    // Keep same ConsoleScreen() when possible, to avoid having to manually persist/restore history, input field, etc.
+
+    // Set of functions to call when disposing/closing the game.
+    val disposeCallbacks = HashSet<() -> Unit>()
+
     override fun create() {
+
         Gdx.input.setCatchKey(Input.Keys.BACK, true)
         if (Gdx.app.type != Application.ApplicationType.Desktop) {
             viewEntireMapForDebug = false
@@ -123,6 +138,18 @@ class UncivGame(parameters: UncivGameParameters) : Game() {
             }
         }
         crashController = CrashController.Impl(crashReportSender)
+
+        createScripting()
+
+        if (runScriptAndExit != null) {
+            val backend = ScriptingState.spawnBackend(runScriptAndExit.first).backend
+            val execResult = ScriptingState.exec(
+                command = runScriptAndExit.second,
+                withBackend = backend
+            )
+            runScriptAndExit.third?.invoke(execResult)
+            Gdx.app.exit()
+        }
     }
 
     fun loadGame(gameInfo: GameInfo) {
@@ -140,6 +167,12 @@ class UncivGame(parameters: UncivGameParameters) : Game() {
         }
     }
 
+    private fun createScripting() {
+        ScriptingScope.uncivGame = this
+
+        consoleScreen = ConsoleScreen {  }
+    }
+
     fun setScreen(screen: BaseScreen) {
         Gdx.input.inputProcessor = screen.stage
         super.setScreen(screen)
@@ -150,6 +183,12 @@ class UncivGame(parameters: UncivGameParameters) : Game() {
         setScreen(worldScreen)
         worldScreen.shouldUpdate = true // This can set the screen to the policy picker or tech picker screen, so the input processor must come before
         Gdx.graphics.requestRendering()
+    }
+
+    fun setConsoleScreen() {
+        if (settings.enableScriptingConsole) {
+            consoleScreen.openConsole()
+        }
     }
 
     // This is ALWAYS called after create() on Android - google "Android life cycle"
@@ -165,6 +204,10 @@ class UncivGame(parameters: UncivGameParameters) : Game() {
 
     override fun resize(width: Int, height: Int) {
         screen.resize(width, height)
+        if (screen !== consoleScreen) {
+            // consoleScreen is usually persistent, so it needs to be resized even if not active.
+            consoleScreen.resize(width, height)
+        }
     }
 
     override fun dispose() {
@@ -188,6 +231,8 @@ class UncivGame(parameters: UncivGameParameters) : Game() {
         }
         settings.save()
 
+        for (callback in disposeCallbacks) callback()
+
         threadList.filter { it !== Thread.currentThread() && it.name != "DestroyJavaVM"}.forEach {
             println ("    Thread ${it.name} still running in UncivGame.dispose().")
         }
@@ -196,6 +241,8 @@ class UncivGame(parameters: UncivGameParameters) : Game() {
     companion object {
         lateinit var Current: UncivGame
         fun isCurrentInitialized() = this::Current.isInitialized
+        // The main loop thread of the game, from which the OpenGL context is available and in which blocking actions can interrupt rendering.
+        val MainThread = Thread.currentThread() // Originaly thought I'd be clever and set this from a postRunnable for an explicit guarantee of getting the loop thread, but that does a NPE.
     }
 }
 

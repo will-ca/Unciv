@@ -26,6 +26,7 @@ import com.unciv.models.ruleset.tile.ResourceType
 import com.unciv.models.translations.tr
 import com.unciv.ui.cityscreen.CityScreen
 import com.unciv.ui.civilopedia.CivilopediaScreen
+import com.unciv.ui.consolescreen.IConsoleScreenAccessible
 import com.unciv.ui.overviewscreen.EmpireOverviewScreen
 import com.unciv.ui.pickerscreens.*
 import com.unciv.ui.saves.LoadGameScreen
@@ -54,7 +55,7 @@ import kotlin.concurrent.timer
  * @property mapHolder A [MinimapHolder] instance
  * @property bottomUnitTable Bottom left widget holding information about a selected unit or city
  */
-class WorldScreen(val gameInfo: GameInfo, val viewingCiv:CivilizationInfo) : BaseScreen() {
+class WorldScreen(val gameInfo: GameInfo, val viewingCiv:CivilizationInfo) : BaseScreen(), IConsoleScreenAccessible {
 
     var isPlayersTurn = viewingCiv == gameInfo.currentPlayerCiv
         private set     // only this class is allowed to make changes
@@ -78,7 +79,7 @@ class WorldScreen(val gameInfo: GameInfo, val viewingCiv:CivilizationInfo) : Bas
     private val diplomacyButtonHolder = Table()
     private val fogOfWarButton = createFogOfWarButton()
     private val nextTurnButton = createNextTurnButton()
-    private var nextTurnAction: () -> Unit = {}
+    private var nextTurnAction: () -> Unit = {} // TODO: Expose to scripting API. Also: Break up and expose individual actions, checking for order validity. Status: Lambdas not supported in Reflection.kt.
     private val tutorialTaskTable = Table().apply { background = ImageGetter.getBackground(ImageGetter.getBlue().lerp(Color.BLACK, 0.5f)) }
 
     private val notificationsScroll: NotificationsScroll
@@ -189,6 +190,13 @@ class WorldScreen(val gameInfo: GameInfo, val viewingCiv:CivilizationInfo) : Bas
         // don't run update() directly, because the UncivGame.worldScreen should be set so that the city buttons and tile groups
         //  know what the viewing civ is.
         shouldUpdate = true
+
+        setConsoleScreenCloseAction({ game.setWorldScreen() })
+        updateScriptingState(
+            gameInfo = gameInfo,
+            civInfo = selectedCiv, // TODO: Spectator.
+            worldScreen = this
+        )
     }
 
     private fun stopMultiPlayerRefresher() {
@@ -237,6 +245,7 @@ class WorldScreen(val gameInfo: GameInfo, val viewingCiv:CivilizationInfo) : Bas
         }
 
         // Space and N are assigned in createNextTurnButton
+        setOpenConsoleScreenHotkey() // CLI console
         keyPressDispatcher[Input.Keys.F1] = { game.setScreen(CivilopediaScreen(gameInfo.ruleSet, this)) }
         keyPressDispatcher['E'] = { game.setScreen(EmpireOverviewScreen(selectedCiv)) }     // Empire overview last used page
         /*
@@ -337,8 +346,8 @@ class WorldScreen(val gameInfo: GameInfo, val viewingCiv:CivilizationInfo) : Bas
             // if we find the current player didn't change, don't update
             // Additionally, check if we are the current player, and in that case always stop
             // This fixes a bug where for some reason players were waiting for themselves.
-            if (gameInfo.currentPlayer == latestGame.currentPlayer 
-                && gameInfo.turns == latestGame.turns 
+            if (gameInfo.currentPlayer == latestGame.currentPlayer
+                && gameInfo.turns == latestGame.turns
                 && latestGame.currentPlayer != gameInfo.getPlayerToViewAs().civName
             ) {
                 Gdx.app.postRunnable { loadingGamePopup.close() }

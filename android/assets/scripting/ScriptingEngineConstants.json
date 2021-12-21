@@ -1,0 +1,61 @@
+{ // Internal directories can't be identified, traversed, or copied on Desktop because all assets are indistinguishable on the classpath or something. So manually list out all files that are part of each engine's runtime environment instead.
+	engines: {
+		python: {
+			files: [
+				unciv_lib/
+				unciv_lib/__init__.py
+				unciv_lib/api.py
+				unciv_lib/autocompletion.py
+				unciv_lib/ipc.py
+				unciv_lib/shadow.py
+				unciv_lib/utils.py
+				unciv_lib/wrapping.py
+				PythonScripting.md
+				unciv_pyhelpers.py
+				main.py
+				unciv_scripting_examples/
+				unciv_scripting_examples/__init__.py
+				unciv_scripting_examples/EndTimes.py
+				unciv_scripting_examples/EventPopup.py
+				unciv_scripting_examples/ExternalPipe.py
+				unciv_scripting_examples/MapEditingMacros.py
+				unciv_scripting_examples/Merfolk.py
+				unciv_scripting_examples/PlayerMacros.py
+				unciv_scripting_examples/ProceduralTechtree.py
+				unciv_scripting_examples/Tests.py
+				unciv_scripting_examples/TicTacToe.py
+				unciv_scripting_examples/Utils.py
+				unciv_scripting_examples/example_assets/EarthTerrainFantasyHex.jpg
+				unciv_scripting_examples/example_assets/EarthTerrainRaw.png
+				unciv_scripting_examples/example_assets/EarthTopography.png
+				unciv_scripting_examples/example_assets/Elizabeth300
+				unciv_scripting_examples/example_assets/StarryNight.jpg
+				unciv_scripting_examples/example_assets/TurboRainbow.png
+				unciv_scripting_examples/example_assets/WheatField.jpg
+			]
+			syntaxHighlightingRegexStack: [
+			]
+		}
+		lua: {
+			files: [
+				unciv/
+				main.lua
+			]
+			syntaxHighlightingRegexStack: [
+			]
+		}
+		qjs: {
+			files: [
+				unciv/
+				main.js
+			]
+			syntaxHighlightingRegexStack: [
+			]
+		}
+	}
+
+	sharedfiles: [
+		ScriptAPI.json
+		ScriptAPIConstants.json
+	]
+}

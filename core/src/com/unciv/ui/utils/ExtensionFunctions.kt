@@ -1,6 +1,8 @@
 package com.unciv.ui.utils
 
 import com.badlogic.gdx.graphics.Color
+import com.badlogic.gdx.graphics.Pixmap
+import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.scenes.scene2d.Actor
 import com.badlogic.gdx.scenes.scene2d.InputEvent
 import com.badlogic.gdx.scenes.scene2d.Stage
@@ -13,6 +15,8 @@ import com.unciv.models.translations.tr
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.concurrent.thread
+import kotlin.math.max
+import kotlin.math.min
 import kotlin.random.Random
 
 /**
@@ -114,7 +118,7 @@ fun Table.addSeparator(color: Color = Color.WHITE, colSpan: Int = 0, height: Flo
 
 /**
  * Create a vertical separator as an empty Container with a colored background.
- * 
+ *
  * Note: Unlike the horizontal [addSeparator] this cannot automatically span several rows. Repeat the separator if needed.
  */
 fun Table.addSeparatorVertical(color: Color = Color.WHITE, width: Float = 2f): Cell<Image> {
@@ -141,6 +145,7 @@ fun <T> ArrayList<T>.withItem(item:T): ArrayList<T> {
     newArrayList.add(item)
     return newArrayList
 }
+
 
 /** Gets a clone of a [HashSet] with an additional item
  *
@@ -170,6 +175,27 @@ fun <T> HashSet<T>.withoutItem(item:T): HashSet<T> {
     val newHashSet = HashSet(this)
     newHashSet.remove(item)
     return newHashSet
+}
+
+// @param index Integer index to clip to the List's bounds.
+// @param extendSize Allow indices that exceed the maximum index in this array by this amount.
+// @return Input index clipped to the optionally extended range of the List's indices.
+fun <T> List<T>.clipIndexToBounds(index: Int, extendEnd: Int = 0): Int {
+    return max(0, min(this.size-1+extendEnd, index))
+}
+
+/**
+ * Make sure an index is valid for this List.
+ *
+ * Doing all checks with the same function and error message is probably easier to debug than letting an array access fail at the point of access.
+ *
+ * @param index Index to check.
+ * @throws IndexOutOfBoundsException If given invalid index.
+ */
+fun <T> List<T>.enforceValidIndex(index: Int) {
+    if (index < 0 || this.size <= index) {
+        throw IndexOutOfBoundsException("Index {index} is out of range of ${this::class.simpleName}().")
+    }
 }
 
 /** Translate a percentage number - e.g. 25 - to the multiplication value - e.g. 1.25f */
@@ -209,11 +235,11 @@ fun String.toLabel(fontColor: Color = Color.WHITE, fontSize: Int = 18): Label {
 fun String.toCheckBox(startsOutChecked: Boolean = false, changeAction: ((Boolean)->Unit)? = null)
     = CheckBox(this.tr(), BaseScreen.skin).apply {
         isChecked = startsOutChecked
-        if (changeAction != null) onChange { 
+        if (changeAction != null) onChange {
             changeAction(isChecked)
         }
         // Add a little distance between the icon and the text. 0 looks glued together,
-        // 5 is about half an uppercase letter, and 1 about the width of the vertical line in "P".  
+        // 5 is about half an uppercase letter, and 1 about the width of the vertical line in "P".
         imageCell.padRight(1f)
     }
 
@@ -258,6 +284,60 @@ fun <T> List<T>.randomWeighted(weights: List<Float>, random: Random = Random): T
             return this[i]
     }
     return this.last()
+}
+
+/**
+ * @return String of exception preceded by entire stack trace.
+ */
+fun Throwable.stringifyException(): String {
+    val causes = arrayListOf<Throwable>()
+    var cause: Throwable? = this
+    while (cause != null) {
+        causes.add(cause)
+        cause = cause.cause
+        //I swear this is okay to do.
+    }
+    return listOf(
+        "",
+        *this.stackTrace,
+        "",
+        *causes.asReversed().map { it.toString() }.toTypedArray()
+    ).joinToString("\n")
+}
+
+/**
+ * Turn a TextureRegion into a Pixmap.
+ *
+ * Originally a function defined in the Fonts Object and used only in Fonts.kt.
+ * Turned into an extension method to 1. Clean up the syntax and 2. Use it to expose internal, packed images to scripts in class ScriptingScope.
+ *
+ * .dispose() must be called on the returned Pixmap when it is no longer needed, or else it will leave a memory leak behind.
+ *
+ * @return New Pixmap with all the size and pixel data from this TextureRegion copied into it.
+ */
+// From https://stackoverflow.com/questions/29451787/libgdx-textureregion-to-pixmap
+fun TextureRegion.toPixmap(): Pixmap {
+    val textureData = this.texture.textureData
+    if (!textureData.isPrepared) {
+        textureData.prepare()
+    }
+    val pixmap = Pixmap(
+            this.regionWidth,
+            this.regionHeight,
+            textureData.format
+    )
+    val textureDataPixmap = textureData.consumePixmap()
+    pixmap.drawPixmap(
+            textureDataPixmap, // The other Pixmap
+            0, // The target x-coordinate (top left corner)
+            0, // The target y-coordinate (top left corner)
+            this.regionX, // The source x-coordinate (top left corner)
+            this.regionY, // The source y-coordinate (top left corner)
+            this.regionWidth, // The width of the area from the other Pixmap in pixels
+            this.regionHeight // The height of the area from the other Pixmap in pixels
+    )
+    textureDataPixmap.dispose() // Prevent memory leak.
+    return pixmap
 }
 
 /**

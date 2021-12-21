@@ -17,6 +17,7 @@ import com.unciv.models.ruleset.RulesetCache
 import com.unciv.ui.MultiplayerScreen
 import com.unciv.ui.mapeditor.*
 import com.unciv.models.metadata.GameSetupInfo
+import com.unciv.ui.consolescreen.IConsoleScreenAccessible
 import com.unciv.ui.newgamescreen.NewGameScreen
 import com.unciv.ui.pickerscreens.ModManagementScreen
 import com.unciv.ui.saves.LoadGameScreen
@@ -24,7 +25,7 @@ import com.unciv.ui.utils.*
 import com.unciv.ui.utils.UncivTooltip.Companion.addTooltip
 import kotlin.concurrent.thread
 
-class MainMenuScreen: BaseScreen() {
+class MainMenuScreen: BaseScreen(), IConsoleScreenAccessible {
     private val autosave = "Autosave"
     private val backgroundTable = Table().apply { background=ImageGetter.getBackground(Color.WHITE) }
     private val singleColumn = isCrampedPortrait()
@@ -55,7 +56,7 @@ class MainMenuScreen: BaseScreen() {
                 keyPressDispatcher[key] = function
             table.addTooltip(key, 32f)
         }
-        
+
         table.pack()
         return table
     }
@@ -147,6 +148,10 @@ class MainMenuScreen: BaseScreen() {
             }
             ExitGamePopup(this)
         }
+
+        setOpenConsoleScreenHotkey()
+        setConsoleScreenCloseAction()
+        updateScriptingState()
     }
 
 
@@ -168,10 +173,10 @@ class MainMenuScreen: BaseScreen() {
                 screen.game.setScreen(newMapScreen)
                 screen.dispose()
             }
-            val newMapButton = screen.getMenuButton("New map", "OtherIcons/New", 'n', true, newMapAction) 
+            val newMapButton = screen.getMenuButton("New map", "OtherIcons/New", 'n', true, newMapAction)
             newMapButton.background = tableBackground
             add(newMapButton).row()
-            keyPressDispatcher['n'] = newMapAction 
+            keyPressDispatcher['n'] = newMapAction
 
             val loadMapAction = {
                 val loadMapScreen = SaveAndLoadMapScreen(null, false, screen)
@@ -179,7 +184,7 @@ class MainMenuScreen: BaseScreen() {
                 screen.game.setScreen(loadMapScreen)
                 screen.dispose()
             }
-            val loadMapButton = screen.getMenuButton("Load map", "OtherIcons/Load", 'l', true, loadMapAction) 
+            val loadMapButton = screen.getMenuButton("Load map", "OtherIcons/Load", 'l', true, loadMapAction)
             loadMapButton.background = tableBackground
             add(loadMapButton).row()
             keyPressDispatcher['l'] = loadMapAction

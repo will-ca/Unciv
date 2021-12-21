@@ -202,7 +202,7 @@ class Translations : LinkedHashMap<String, TranslationEntry>(){
      */
     fun getSpaceEquivalent(language: String): String {
         val translation = getText("\" \"", language, null)
-        return translation.substring(1, translation.length-1)
+        return translation.substring(1, translation.lastIndex)
     }
     
     fun shouldCapitalize(language: String): Boolean {
@@ -289,7 +289,7 @@ fun String.tr(): String {
         // translated conditionals, removing the <> surrounding them, and removing param values
         // where it exists.
         val conditionalOrdering = UncivGame.Current.translations.getConditionalOrder(language)
-        for (placedConditional in pointyBraceRegex.findAll(conditionalOrdering).map { it.value.substring(1, it.value.length-1).getPlaceholderText() }) {
+        for (placedConditional in pointyBraceRegex.findAll(conditionalOrdering).map { it.value.substring(1, it.value.lastIndex).getPlaceholderText() }) {
             if (placedConditional in conditionals) {
                 translatedConditionals.add(conditionsWithTranslation[placedConditional]!!)
                 conditionsWithTranslation.remove(placedConditional)
@@ -389,9 +389,9 @@ fun String.fillPlaceholders(vararg strings: String): String {
     if (keys.size > strings.size)
         throw Exception("String $this has a different number of placeholders ${keys.joinToString()} (${keys.size}) than the substitutive strings ${strings.joinToString()} (${strings.size})!")
 
-    var filledString = this
+    var filledString = this.replace(squareBraceRegex, "[]")
     for (i in keys.indices)
-        filledString = filledString.replaceFirst(keys[i], strings[i])
+        filledString = filledString.replaceFirst("[]", "[${strings[i]}]")
     return filledString
 }
 
@@ -399,6 +399,7 @@ fun String.getConditionals() = pointyBraceRegex.findAll(this).map { Unique(it.gr
 
 fun String.removeConditionals() = this
     .replace(pointyBraceRegex, "")
+    // So, this is a quick hack, but it works as long as nobody uses word separators different from " " (space) and "" (none),
     // So, this is a quick hack, but it works as long as nobody uses word separators different from " " (space) and "" (none),
     // And no translations start or end with a space.
     // According to https://linguistics.stackexchange.com/questions/6131/is-there-a-long-list-of-languages-whose-writing-systems-dont-use-spaces

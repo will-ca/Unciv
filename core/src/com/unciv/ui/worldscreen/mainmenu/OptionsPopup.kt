@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.Input
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.scenes.scene2d.Actor
+import com.badlogic.gdx.scenes.scene2d.Group
 import com.badlogic.gdx.scenes.scene2d.ui.*
 import com.badlogic.gdx.utils.Align
 import com.unciv.Constants
@@ -13,6 +14,7 @@ import com.unciv.UncivGame
 import com.unciv.logic.MapSaver
 import com.unciv.logic.civilization.PlayerType
 import com.unciv.models.UncivSound
+import com.unciv.models.metadata.GameSettings
 import com.unciv.models.ruleset.Ruleset
 import com.unciv.models.ruleset.RulesetCache
 import com.unciv.models.tilesets.TileSetCache
@@ -72,6 +74,7 @@ class OptionsPopup(val previousScreen: BaseScreen) : Popup(previousScreen) {
         if (Gdx.app.type == Application.ApplicationType.Android)
             tabs.addPage("Multiplayer", getMultiplayerTab(), ImageGetter.getImage("OtherIcons/Multiplayer"), 24f)
         tabs.addPage("Advanced", getAdvancedTab(), ImageGetter.getImage("OtherIcons/Settings"), 24f)
+        tabs.addPage("Scripting", getScriptingTab(), ImageGetter.getImage("OtherIcons/Code"), 24f)
         if (RulesetCache.size > 1) {
             tabs.addPage("Locate mod errors", getModCheckTab(), ImageGetter.getImage("OtherIcons/Mods"), 24f) { _, _ ->
                 if (modCheckFirstRun) runModChecker()
@@ -255,6 +258,86 @@ class OptionsPopup(val previousScreen: BaseScreen) : Popup(previousScreen) {
         addTranslationGeneration()
 
         addSetUserId()
+    }
+
+    private fun getScriptingTab() = Table(BaseScreen.skin).apply {
+        pad(10f)
+        defaults().pad(5f)
+
+        add(
+            WrappableLabel(
+                "{WARNING: The features on this page are all experimental, and very powerful. It may be possible to damage your device with them if you do not know what you are doing.}\n\n{You have been warned!}", // TODO: Translation.
+                tabs.prefWidth * 0.5f
+            ).apply {
+                wrap = true
+                setAlignment(Align.center)
+            }
+        ).padTop(20f).row()
+
+        addSeparator().padTop(20f)
+
+        add("Scripting Console".toLabel(fontSize = 24)).padTop(20f).row() // TODO: Translation.
+
+        val consoleBasicTable = Table(skin).apply {
+            pad(5f)
+            defaults().pad(2.5f)
+            addYesNoRow("{Enable scripting console}\n{Press ~ to activate}", // TODO: Translation.
+                settings.enableScriptingConsole) {
+                settings.enableScriptingConsole = it
+            }
+            addYesNoRow("Show warning when opening scripting console", // TODO: Translation.
+                settings.showScriptingConsoleWarning) {
+                settings.showScriptingConsoleWarning = it
+            } // Two affirmative actions to start using scripting console: Enable in OptionsPopup button, accept ConsoleScreen warning.
+        }
+
+        add(consoleBasicTable).row()
+
+        add("Console Startup Commands".toLabel(fontSize = 24)).padTop(20f).row() // TODO: Translation.
+
+        val consoleStartupsTable = Table(skin).apply {
+            pad(5f)
+            defaults().pad(2.5f)
+            settings.scriptingConsoleStartups.keys.removeAll { it !in GameSettings.scriptingConsoleStartupDefaults }
+
+            for ((displayName, startup) in settings.scriptingConsoleStartups) {
+                addTextFieldRow(displayName, startup, GameSettings.scriptingConsoleStartupDefaults[displayName]) {
+                    settings.scriptingConsoleStartups[displayName] = it
+                }
+            }
+        }
+
+        add(consoleStartupsTable).row()
+
+        addSeparator().padTop(20f)
+
+        add("Mod Scripting API".toLabel(fontSize = 24)).padTop(20f).row() // TODO: Translation.
+
+        val modScriptingTable = Table(skin).apply {
+            pad(5f)
+            defaults().pad(2.5f)
+            val buttonSetter = object { var set = { _: Boolean -> println("Uninitialized button setting wrapper for enableModScripting.") } } // Need access to the button setter from inside the lambda passed to addYesNoRow, but only get it from the return value of addYesNoRow. It's… Not *that* messy, and doing this here is probably cleaner than what I would end up with if I tried to change addYesNoRow any further (which is also used a lot elsewhere).
+            buttonSetter.set = addYesNoRow(
+                "{Allow mods to run scripts}\n{CAUTION!}", // TODO: Translation.
+                settings.enableModScripting
+            ) { // Probably not worth adding the confirmation behaviour to addYesNoRow… Standardizing it sounds like a quick path to warning fatigue.
+                settings.enableModScripting = false
+                if (it) { // Aside from not wanting to get anyone hacked, should probably also check if Google Play has liability (or third-party distribution) issues— Not any more dangerous than a web browser, in fact arguably safer/more controlled, and trapped in Android sandbox regardless, but still.
+                    YesNoPopup( // Four affirmative actions to enable a mod: Click OptionsPopup button, accept options warning, tick mod checkbox, accept mod warning.
+                        "{Enabling this feature will allow mods you choose to run code on your device.}\n\n{Malicious code may be able to harm your device or steal your data!}\n{Never enable scripting for any mods you don't trust.}\n\n{Do you wish to continue?}", // TODO: Translation.
+                        { settings.enableModScripting = it },
+                        UncivGame.Current.screen as BaseScreen,
+                        { buttonSetter.set(false) }
+                    ).open(true)
+                }
+            }
+        }
+
+        add(modScriptingTable).row()
+        //TODO: Move to separate tab.
+        //TODO: Startup macros per backend type.
+        //TODO: ConsoleScreen warning toggle.
+        //https://thenounproject.com/icon/code-787514/
     }
 
     private fun getModCheckTab() = Table(BaseScreen.skin).apply {
@@ -582,8 +665,8 @@ class OptionsPopup(val previousScreen: BaseScreen) : Popup(previousScreen) {
         }
     }
 
-
-    private fun Table.addYesNoRow(text: String, initialValue: Boolean, updateWorld: Boolean = false, action: ((Boolean) -> Unit)) {
+    // @return Lambda function for setting the button state (triggers action, world update, etc).
+    private fun Table.addYesNoRow(text: String, initialValue: Boolean, updateWorld: Boolean = false, action: ((Boolean) -> Unit)): (Boolean) -> Unit {
         val wrapWidth = tabs.prefWidth - 60f
         add(WrappableLabel(text, wrapWidth).apply { wrap = true })
             .left().fillX()
@@ -595,6 +678,51 @@ class OptionsPopup(val previousScreen: BaseScreen) : Popup(previousScreen) {
                 previousScreen.shouldUpdate = true
         }
         add(button).row()
+        return { button.value = it }
+    }
+
+
+    // @param labelText Label to show next to the text field.
+    // @param initialValue Text in the text field.
+    // @param defaultValue If non-null, a button is added to reset the text field to this value.
+    // @param action Function given the updated value of the text field when it changes. Called before saving game settings.
+    private fun Table.addTextFieldRow(labelText: String, initialValue: String, defaultValue: String? = null, action: (String) -> Unit) {
+        val wrapWidth = tabs.prefWidth * 0.2f
+        add(WrappableLabel(labelText, wrapWidth).apply { wrap = true })
+            .right().fillX()
+            .maxWidth(wrapWidth)
+        val input = TextField(initialValue, skin)
+        input.onChange {
+            action(input.text)
+            settings.save() // Don't currently see a need for updateWorld.
+        }
+        val fieldWidth = tabs.prefWidth * 0.5f
+        var lastcell: Cell<*> = add(input)
+            .left().fillX()
+            .minWidth(fieldWidth)
+
+        if (defaultValue != null) {
+            val resetIcon = ImageGetter.getImage("OtherIcons/Close").apply {
+                setSize(20f, 20f)
+            }
+            val iconWrapper = Group().apply { // Stolen from, TODO: Unify with code in TabbedPager.addPage().
+                isTransform =
+                    false // performance helper - nothing here is rotated or scaled
+                setSize(20f, 20f)
+                resetIcon.center(this)
+                addActor(resetIcon)
+            }
+            val resetButton = Button(skin).apply { add(iconWrapper) }.onClick {
+                input.text = defaultValue
+                action(input.text)
+                settings.save()
+            }
+
+            lastcell = add(resetButton)
+        }
+        // This is a table, so different rows should be aligned even if they have different sizes. (Don't need to add empty cell if not adding reset button.)
+
+        lastcell.row()
     }
 
     //endregion
@@ -608,12 +736,13 @@ class OptionsPopup(val previousScreen: BaseScreen) : Popup(previousScreen) {
     private class YesNoButton(
         initialValue: Boolean,
         skin: Skin,
-        action: (Boolean) -> Unit
+        private val action: (Boolean) -> Unit
     ) : TextButton (initialValue.toYesNo(), skin ) {
-
+        // State of the button. Triggers action and updates text when changed.
         var value = initialValue
-            private set(value) {
+            set(value) {
                 field = value
+                action(value)
                 setText(value.toYesNo())
             }
 
@@ -621,7 +750,6 @@ class OptionsPopup(val previousScreen: BaseScreen) : Popup(previousScreen) {
             color = ImageGetter.getBlue()
             onClick {
                 value = !value
-                action.invoke(value)
             }
         }
 
