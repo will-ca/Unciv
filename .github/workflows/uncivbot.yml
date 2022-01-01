@@ -61,6 +61,7 @@ jobs:
           echo "Pushing changes."
           #git push -f
           git push -f --set-upstream "$WIKI_URL" master
+          echo "Done."
         env:
           GH_TOKEN: ${{ secrets.ACTIONS_ACCESS_TOKEN }}
           CODE_DIR: CodeRepo
