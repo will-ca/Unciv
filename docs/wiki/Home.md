@@ -6,6 +6,8 @@ Test edit 2?
 
 Test edit 3?
 
+Test edit 4.
+
 If you're a developer, you'll probably want to start at the [Getting Started](./Getting-Started.md) page!
 
 If you're a translator, head over to [Translating!](./Translating.md)
