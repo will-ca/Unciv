@@ -17,7 +17,7 @@ jobs:
           set -euo pipefail # Immediate exit on command errors and unset variables.
           # set -x # Print out each executed command. THIS MAY LEAK THE PERSONAL ACCESS TOKEN SECRET VIA $GH_TOKEN and $WIKI_URL (though AFAICT GH is sanitizing it)!
 
-          for REQUIRED_ENV_VAR in GITHUB_ACTOR GITHUB_SERVER_URL GITHUB_REPOSITORY GH_TOKEN CODE_DIR WIKI_DIR WIKI_IN_CODE_REPO PR_AUTHOR PR_TITLE PR_NUMBER; do
+          for REQUIRED_ENV_VAR in GITHUB_ACTOR GITHUB_SERVER_URL GITHUB_REPOSITORY GH_TOKEN CODE_DIR WIKI_DIR WIKI_IN_CODE_REPO PR_MERGEDAT PR_AUTHOR PR_TITLE PR_URL; do
             if [ -z "$(eval "echo \$$REQUIRED_ENV_VAR")" ]; then
               echo "ERROR: \$$REQUIRED_ENV_VAR is not set."
               exit 1
