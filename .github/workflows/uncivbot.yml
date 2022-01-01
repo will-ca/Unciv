@@ -60,7 +60,7 @@ jobs:
           echo "Committing changes."
           git status | cat
           git diff --stat --cached | cat # IDK If Git might try to enter the interactive viewer without a pipe output. Probably not, but play it safe.
-          git log
+          git log | head -100
           git commit -m "${PR_AUTHOR}: ${PR_TITLE} (#${PR_NUMBER})"
           echo "Pushing changes."
           git push
