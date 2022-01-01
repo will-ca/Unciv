@@ -5,8 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  update_wiki:
-    if: github.event_name == 'issue_comment' && github.event.issue.pull_request && github.event.comment.body == 'update wiki'
+    if: github.event_name == 'issue_comment' && github.event.issue.pull_request && github.event.comment.body == 'update wiki' && contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association)
     runs-on: ubuntu-latest
     steps:
       - name: Update Wiki.
@@ -29,7 +28,7 @@ jobs:
           PR_NUMBER: ${{ github.event.issue.number }}
           PR_URL: ${{ github.event.issue.html_url }}
         run: |
-          #echo "$EVENT_CONTEXT" # Dump entire event to logs. Watch out for leaks.
+          echo "$EVENT_CONTEXT" # Dump entire event to logs. Watch out for leaks.
 
           set -euo pipefail # Immediate exit on command errors and unset variables.
           #set -x # Print out each executed command. THIS MAY LEAK THE PERSONAL ACCESS TOKEN SECRET VIA $GH_TOKEN and $WIKI_URL (though AFAICT GH is sanitizing it)!
