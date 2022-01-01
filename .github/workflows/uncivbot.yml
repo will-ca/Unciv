@@ -61,6 +61,7 @@ jobs:
           echo "Pushing changes."
           #git push -f
           git push -f --set-upstream "$WIKI_URL" master
+          git log | head -100
           echo "Done."
         env:
           GH_TOKEN: ${{ secrets.ACTIONS_ACCESS_TOKEN }}
