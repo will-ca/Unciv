@@ -1,5 +1,7 @@
 # Unciv - FOSS Civ V for Android+Desktop
 
+Idk; I just need a PR to summon bots from.
+
 ![](/extraImages/GithubPreviewImage.png)
 
 [![Google Play](https://img.shields.io/static/v1?label=Google&message=Play&color=607D8B&logo=google-play)](https://play.google.com/store/apps/details?id=com.unciv.app)
