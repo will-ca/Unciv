@@ -59,7 +59,8 @@ jobs:
           git diff --stat --cached | cat # IDK If Git might try to enter the interactive viewer without a pipe output. Probably not, but play it safe.
           git commit -m "${PR_AUTHOR}: ${PR_TITLE} (#${PR_NUMBER})"
           echo "Pushing changes."
-          git push -f
+          #git push -f
+          git push -f --set-upstream "$WIKI_URL" master
         env:
           GH_TOKEN: ${{ secrets.ACTIONS_ACCESS_TOKEN }}
           CODE_DIR: CodeRepo
